@@ -1,0 +1,24 @@
+{
+  "name": "travelapapmockserver",
+  "version": "1.0.0",
+  "description": "Untuk Mock request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.cs.ui.ac.id/cahya.bagus/travelApapMockServer"
+  },
+  "keywords": [
+    "APAP",
+    "A"
+  ],
+  "author": "cahyaBagusGautamaGozales",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@vercel/node": "^5.5.8",
+    "typescript": "^5.9.3"
+  }
+}
