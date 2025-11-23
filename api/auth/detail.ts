@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { allProfiles, mockProfiles } from './db';
-import { BaseResponseDTO, DecodedJWT, DTOUserProfile } from './interface';
+import { BaseResponseDTO, DecodedJWT, DTOCustomer, DTORentalVendor, DTOUserProfile } from './interface';
 import { decodeJwt } from './jwt';
 
 
@@ -48,7 +48,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     const username = req.query.username as string;
     const email = req.query.email as string;
 
-    let userProfile: DTOUserProfile | null = null;
+    let userProfile: DTOUserProfile | DTOCustomer | DTORentalVendor | null = null;
 
     if (userId) {
         userProfile = mockProfiles[userId]
