@@ -1,9 +1,9 @@
-import { DTOUserProfile, Gender, UserRoleType } from "./interface";
+import { DTOCustomer, DTORentalVendor, DTOUserProfile, Gender, UserRoleType } from "./interface";
 
 
 const MOCK_DATETIME = new Date(Date.now());
 
-export const mockProfiles: Record<string, DTOUserProfile> = {
+export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORentalVendor> = {
   "00000000-0000-0000-0000-000000000001": {
     userId: "00000000-0000-0000-0000-000000000001",
     username: "super_admin",
@@ -50,6 +50,7 @@ export const mockProfiles: Record<string, DTOUserProfile> = {
     createdAt: MOCK_DATETIME,
     updatedAt: MOCK_DATETIME,
     isDeleted: false,
+    saldo: 0
   },
 
   "i9i9i9i9-i9i9-i9i9-i9i9-i9i9i9i9i9i9": {
@@ -86,7 +87,9 @@ export const mockProfiles: Record<string, DTOUserProfile> = {
     createdAt: MOCK_DATETIME,
     updatedAt: MOCK_DATETIME,
     isDeleted: false,
+    phone: "0000000000",
+    listOfLocations: ["aaa","aaa","aaa"]
   },
 };
 
-export const allProfiles : DTOUserProfile[] = Object.values(mockProfiles);
+export const allProfiles: (DTOUserProfile | DTOCustomer | DTORentalVendor)[] = Object.values(mockProfiles);
