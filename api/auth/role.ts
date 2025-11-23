@@ -1,21 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { BaseResponseDTO, UserRoleType } from './interface';
 
-enum UserRoleType {
-  SUPERADMIN = "Superadmin",
-  ACCOMMODATION_OWNER = "Accommodation Owner",
-  FLIGHT_AIRLINE = "Flight Airline",
-  CUSTOMER = "Customer",
-  INSURANCE_PROVIDER = "Insurance Provider",
-  TOUR_PACKAGE_VENDOR = "Tour Package Vendor",
-  RENTAL_VENDOR = "Rental Vendor",
-}
-
-interface BaseResponseDTO<T> {
-  status: number;
-  message: string;
-  timestamp: string;
-  data: T;
-}
 
 const mockProfiles: Record<string, UserRoleType> = {
   "00000000-0000-0000-0000-000000000001" : UserRoleType.SUPERADMIN ,
