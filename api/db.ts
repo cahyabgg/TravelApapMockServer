@@ -53,8 +53,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
     saldo: 0
   },
 
-  "i9i9i9i9-i9i9-i9i9-i9i9-i9i9i9i9i9i9": {
-    userId: "i9i9i9i9-i9i9-i9i9-i9i9-i9i9i9i9i9i9",
+  "19191919-1919-1919-1919-191919191919": {
+    userId: "19191919-1919-1919-1919-191919191919",
     role: UserRoleType.INSURANCE_PROVIDER,
     username: "insure_co",
     name: "Secure Shield",
@@ -65,8 +65,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
     isDeleted: false,
   },
 
-  "t0p0v0t0-p0v0-t0p0-v0t0-p0v0t0p0v0t0": {
-    userId: "t0p0v0t0-p0v0-t0p0-v0t0-p0v0t0p0v0t0",
+  "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0": {
+    userId: "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0",
     role: UserRoleType.TOUR_PACKAGE_VENDOR,
     username: "tour_vendor",
     name: "Global Tours Inc.",
@@ -77,8 +77,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
     isDeleted: false,
   },
 
-  "r1v1r1v1-r1v1-r1v1-r1v1-r1v1r1v1r1v1": {
-    userId: "r1v1r1v1-r1v1-r1v1-r1v1-r1v1r1v1r1v1",
+  "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1": {
+    userId: "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1",
     role: UserRoleType.RENTAL_VENDOR,
     username: "car_rental",
     name: "Wheels On Demand",
@@ -115,18 +115,18 @@ export const mockPoints: Record<string, DTOLoyalty> = {
     loyaltyPoints: 100
   },
 
-  "i9i9i9i9-i9i9-i9i9-i9i9-i9i9i9i9i9i9": {
-    customerId: "i9i9i9i9-i9i9-i9i9-i9i9-i9i9i9i9i9i9",
+  "19191919-1919-1919-1919-191919191919": {
+    customerId: "19191919-1919-1919-1919-191919191919",
     loyaltyPoints: 100
   },
 
-  "t0p0v0t0-p0v0-t0p0-v0t0-p0v0t0p0v0t0": {
-    customerId: "t0p0v0t0-p0v0-t0p0-v0t0-p0v0t0p0v0t0",
+  "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0": {
+    customerId: "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0",
     loyaltyPoints: 100
   },
 
-  "r1v1r1v1-r1v1-r1v1-r1v1-r1v1r1v1r1v1": {
-    customerId: "r1v1r1v1-r1v1-r1v1-r1v1-r1v1r1v1r1v1",
+  "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1": {
+    customerId: "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1",
     loyaltyPoints: 100
   },
 };
