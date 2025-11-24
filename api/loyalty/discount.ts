@@ -48,7 +48,16 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         discount : 0
     }
 
-    const body: DTOCoupon = req.body;
+    const body: DTOCoupon | undefined = req.body;
+
+    if (!body) {
+        return res.status(400).json({
+            status: 400,
+            message: "Client Error : Body is null",
+            timestamp: new Date().toISOString(),
+            data: null
+        });
+    }
 
     const customerPurchasedCoupon: PurchasedCoupon | undefined = mockPurchasedCoupons.find(
 
@@ -58,7 +67,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     );
 
-    if (!customerPurchasedCoupon) {
+    if (!customerPurchasedCoupon || body.customerId !== customerPurchasedCoupon?.customerId ) {
         const response: BaseResponseDTO<DTODiscount> = {
             status: 200,
             message: "Success getting discounts",
@@ -93,7 +102,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     // 5. Create Response Object
     const response: BaseResponseDTO<DTODiscount> = {
         status: 200,
-        message: "Success adding user points",
+        message: "Success getting discount",
         timestamp: new Date().toISOString(),
         data: discount
     };

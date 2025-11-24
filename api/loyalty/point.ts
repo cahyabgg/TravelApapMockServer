@@ -44,7 +44,16 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         });
     }
 
-    const body : DTOLoyalty = req.body;
+    const body : DTOLoyalty | undefined = req.body;
+
+    if (!body) {
+        return res.status(400).json({
+            status: 400,
+            message: "Client Error : Body is null",
+            timestamp: new Date().toISOString(),
+            data: null
+        });
+    }
 
     let customerPoints : DTOLoyalty | null = mockPoints[body.customerId];
 
