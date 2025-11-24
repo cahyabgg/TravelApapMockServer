@@ -46,7 +46,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     const body : DTOLoyalty | undefined = req.body;
 
-    if (!body) {
+    if (!body || body.customerId === null || body.loyaltyPoints === null) {
         return res.status(400).json({
             status: 400,
             message: "Client Error : Body is null",

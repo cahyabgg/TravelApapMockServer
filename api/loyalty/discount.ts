@@ -50,7 +50,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     const body: DTOCoupon | undefined = req.body;
 
-    if (!body) {
+    if (!body || body.couponCode === null || body.customerId === null) {
         return res.status(400).json({
             status: 400,
             message: "Client Error : Body is null",
