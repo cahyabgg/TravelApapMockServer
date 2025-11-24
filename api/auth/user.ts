@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { mockProfiles } from './db';
-import { BaseResponseDTO, DecodedJWT, DTOUserProfile } from './interface';
+import { mockProfiles } from '../db';
+import { BaseResponseDTO, DecodedUserJWT, DTOUserProfile } from '../interface';
 import { decodeJwt } from './jwt';
 
 
@@ -33,7 +33,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   const token = authHeader.split(' ')[1];
 
   // 4. Map Token to Role
-  const decodedJwt : DecodedJWT = decodeJwt(token);
+  const decodedJwt : DecodedUserJWT = decodeJwt(token) as DecodedUserJWT;
 
   const userRoleKey = decodedJwt.id;
 

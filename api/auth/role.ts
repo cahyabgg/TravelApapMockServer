@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { BaseResponseDTO, UserRoleType } from './interface';
+import { BaseResponseDTO, UserRoleType } from '../interface';
 
 
 const mockProfiles: Record<string, UserRoleType> = {

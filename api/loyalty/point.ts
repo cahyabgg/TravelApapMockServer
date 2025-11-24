@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { allProfiles, mockProfiles } from '../db';
-import { BaseResponseDTO, DecodedUserJWT, DTOCustomer, DTORentalVendor, DTOUserProfile } from '../interface';
-import { decodeJwt } from './jwt';
+import { mockPoints } from '../db';
+import { BaseResponseDTO, DecodedServiceJWT, DTOLoyalty } from '../interface';
+import { decodeJwt } from '../auth/jwt';
 
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
@@ -12,7 +12,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     if (req.method === 'OPTIONS') return res.status(200).end();
 
-    if (req.method !== 'GET') {
+    if (req.method !== 'POST') {
         return res.status(405).json({ status: 405, message: "Method Not Allowed", data: null });
     }
 
@@ -34,7 +34,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     // 4. Map Token to Role
     try {
-        const decodedToken: DecodedUserJWT = decodeJwt(token) as DecodedUserJWT;
+        const decodedToken: DecodedServiceJWT = decodeJwt(token) as DecodedServiceJWT;
     } catch (error) {
         return res.status(403).json({
             status: 403,
@@ -44,30 +44,27 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         });
     }
 
-    const userId = req.query.id as string;
-    const username = req.query.username as string;
-    const email = req.query.email as string;
+    const body : DTOLoyalty = req.body;
 
-    let userProfile: DTOUserProfile | DTOCustomer | DTORentalVendor | null = null;
+    let customerPoints : DTOLoyalty | null = mockPoints[body.customerId];
 
-    if (userId) {
-        userProfile = mockProfiles[userId]
-    } else if (username) {
-        userProfile = allProfiles.find(profile =>
-            profile.username.toLowerCase() === username.toLowerCase()
-        ) as DTOUserProfile | null;
-    } else if (email) {
-        userProfile = allProfiles.find(profile =>
-            profile.email.toLowerCase() === email.toLowerCase()
-        ) as DTOUserProfile | null;
+    if (!customerPoints) {
+        return res.status(404).json({
+            status: 404,
+            message: "Invalid Customer Id",
+            timestamp: new Date().toISOString(),
+            data: null
+        });
     }
 
+    customerPoints.loyaltyPoints = customerPoints.loyaltyPoints + body.loyaltyPoints;
+
     // 5. Create Response Object
-    const response: BaseResponseDTO<DTOUserProfile | null> = {
+    const response: BaseResponseDTO<DTOLoyalty> = {
         status: 200,
-        message: "Success fetching user profile",
+        message: "Success adding user points",
         timestamp: new Date().toISOString(),
-        data: userProfile
+        data: customerPoints
     };
 
     return res.status(200).json(response);
