@@ -112,3 +112,7 @@ export interface Coupon {
    */
   updatedDate: Date; // Corresponds to LocalDateTime
 }
+
+export interface DTOLoginResponse {
+  token : string;
+}
