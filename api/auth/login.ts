@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { BaseResponseDTO, DTOLoginResponse, DTOUserProfile } from '../interface';
+import { BaseResponseDTO, DTOLoginResponse, DTOUserProfile, UserRoleType } from '../interface';
 import validTokens from './token-mapping.json';
 import { mockProfiles } from '../db';
 
@@ -55,10 +55,15 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     const mapping = validTokens as Record<string, string>;
 
-    const userRole = user.role;
+    const userRole: UserRoleType = user.role;
 
     const userToken: DTOLoginResponse = {
-        token: Object.keys(mapping).find(key => mapping[key] === userRole) as string
+        token: Object.keys(mapping).find(key => {
+
+            const jsonRoleName = mapping[key as keyof typeof mapping];
+
+            return UserRoleType[jsonRoleName as keyof typeof UserRoleType] === userRole;
+        }) as string
     };
 
     // Create Response Object
