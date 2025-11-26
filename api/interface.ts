@@ -17,7 +17,8 @@ export enum Gender {
 
 export interface DTOUserProfile {
   userId: string;
-  username: string
+  username: string;
+  password: string;
   name: string;
   email: string;
   gender: Gender;

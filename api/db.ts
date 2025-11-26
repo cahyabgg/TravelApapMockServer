@@ -6,7 +6,8 @@ const MOCK_DATETIME = new Date(Date.now());
 export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORentalVendor> = {
   "00000000-0000-0000-0000-000000000001": {
     userId: "00000000-0000-0000-0000-000000000001",
-    username: "super_admin",
+    username: "superadmin",
+    password: "superadmin123",
     name: "Admin Alpha",
     email: "admin@corp.com",
     gender: Gender.FEMALE,
@@ -19,7 +20,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "1a2b3c4d-5e6f-7080-90a0-b1c2d3e4f501": {
     userId: "1a2b3c4d-5e6f-7080-90a0-b1c2d3e4f501",
     role: UserRoleType.ACCOMMODATION_OWNER,
-    username: "acco_owner",
+    username: "accomodation",
+    password: "accomodation123",
     name: "Hotel Proprietor",
     email: "owner@hotel.com",
     gender: Gender.MALE,
@@ -31,7 +33,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "a1b2c3d4-e5f6-7890-1234-567890abcdef": {
     userId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
     role: UserRoleType.FLIGHT_AIRLINE,
-    username: "airline_rep",
+    username: "airline",
+    password: "airline123",
     name: "SkyWings Agent",
     email: "agent@skywings.com",
     gender: Gender.MALE,
@@ -43,7 +46,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "c1c1c1c1-c1c1-c1c1-c1c1-c1c1c1c1c1c1": {
     userId: "c1c1c1c1-c1c1-c1c1-c1c1-c1c1c1c1c1c1",
     role: UserRoleType.CUSTOMER,
-    username: "traveler_one",
+    username: "customer",
+    password: "customer123",
     name: "Pebbles Traveler",
     email: "travel@email.com",
     gender: Gender.FEMALE,
@@ -56,7 +60,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "19191919-1919-1919-1919-191919191919": {
     userId: "19191919-1919-1919-1919-191919191919",
     role: UserRoleType.INSURANCE_PROVIDER,
-    username: "insure_co",
+    username: "insurance",
+    password: "insurance123",
     name: "Secure Shield",
     email: "contact@secure.com",
     gender: Gender.FEMALE,
@@ -68,7 +73,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0": {
     userId: "d0e0f0d0-e0f0-d0e0-f0d0-e0f0d0e0f0d0",
     role: UserRoleType.TOUR_PACKAGE_VENDOR,
-    username: "tour_vendor",
+    username: "tour",
+    password: "tour123",
     name: "Global Tours Inc.",
     email: "info@globaltours.com",
     gender: Gender.FEMALE,
@@ -80,7 +86,8 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1": {
     userId: "b1e1b1e1-b1e1-b1e1-b1e1-b1e1b1e1b1e1",
     role: UserRoleType.RENTAL_VENDOR,
-    username: "car_rental",
+    username: "rental",
+    password: "rental123",
     name: "Wheels On Demand",
     email: "rentals@wheels.com",
     gender: Gender.MALE,
