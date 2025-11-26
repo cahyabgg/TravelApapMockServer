@@ -55,7 +55,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     const mapping = validTokens as Record<string, string>;
 
-    const userRole = "SUPERADMIN";
+    const userRole = user.role;
 
     const userToken: DTOLoginResponse = {
         token: Object.keys(mapping).find(key => mapping[key] === userRole) as string
