@@ -95,7 +95,14 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
     updatedAt: MOCK_DATETIME,
     isDeleted: false,
     phone: "0000000000",
-    listOfLocations: ["aaa","aaa","aaa"]
+    listOfLocations: [
+      "Kabupaten Administrasi Kepulauan Seribu",
+      "Kota Administrasi Jakarta Barat",
+      "Kota Administrasi Jakarta Pusat",
+      "Kota Administrasi Jakarta Selatan",
+      "Kota Administrasi Jakarta Timur",
+      "Kota Administrasi Jakarta Utara"
+    ]
   },
 };
 
