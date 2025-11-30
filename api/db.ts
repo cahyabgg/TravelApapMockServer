@@ -106,7 +106,6 @@ export const mockProfiles: Record<string, DTOUserProfile | DTOCustomer | DTORent
   },
 };
 
-export const allProfiles: (DTOUserProfile | DTOCustomer | DTORentalVendor)[] = Object.values(mockProfiles);
 
 export const mockPoints: Record<string, DTOLoyalty> = {
   "00000000-0000-0000-0000-000000000001": {
@@ -205,3 +204,189 @@ export const mockCoupons: Coupon[] = [
     updatedDate: new Date("2025-10-15T00:00:00Z"),
   },
 ];
+
+
+export const fiveNewMockRentalVendors: Record<string, DTORentalVendor> = {
+
+  // Vendor 1 - CORRECTED UUID
+  "e5f6a7b8-c9d0-e1f2-a3b4-c5d6e7f8a9b0": {
+    userId: "e5f6a7b8-c9d0-e1f2-a3b4-c5d6e7f8a9b0",
+    role: UserRoleType.RENTAL_VENDOR,
+    username: "trucklease",
+    password: "truckpass",
+    name: "Heavy Duty Haulers",
+    email: "trucks@haul.com",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+    phone: "3333333333",
+    listOfLocations: [
+      "Kota Administrasi Jakarta Timur",
+      "Kota Administrasi Jakarta Utara",
+    ],
+  },
+
+  // Vendor 2 - CORRECTED UUID
+  "f9a0b1c2-d3e4-f5a6-b7c8-d9e0f1a2b3c4": {
+    userId: "f9a0b1c2-d3e4-f5a6-b7c8-d9e0f1a2b3c4",
+    role: UserRoleType.RENTAL_VENDOR,
+    username: "mopedz",
+    password: "mopedpass",
+    name: "Two Wheels Today",
+    email: "bikes@twowheels.net",
+    gender: Gender.FEMALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+    phone: "4444444444",
+    listOfLocations: [
+      "Kota Administrasi Jakarta Barat",
+      "Kota Administrasi Jakarta Pusat",
+    ],
+  },
+
+  // Vendor 3 - CORRECTED UUID
+  "a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6": {
+    userId: "a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6",
+    role: UserRoleType.RENTAL_VENDOR,
+    username: "boatrent",
+    password: "boatpass",
+    name: "Aqua Adventures Rentals",
+    email: "water@adventures.com",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+    phone: "5555555555",
+    listOfLocations: [
+      "Kota Administrasi Jakarta Selatan",
+      "Kabupaten Administrasi Kepulauan Seribu",
+      "Kota Administrasi Jakarta Pusat",
+    ],
+  },
+
+  // Vendor 4 - CORRECTED UUID
+  "b5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e0": {
+    userId: "b5c6d7e8-f9a0-b1c2-d3e4-f5a6b7c8d9e0",
+    role: UserRoleType.RENTAL_VENDOR,
+    username: "minibus",
+    password: "buspass",
+    name: "Group Transport Co.",
+    email: "groups@transport.org",
+    gender: Gender.FEMALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+    phone: "6666666666",
+    listOfLocations: [
+      "Kota Administrasi Jakarta Pusat",
+      "Kota Administrasi Jakarta Timur",
+      "Kota Administrasi Jakarta Selatan",
+    ],
+  },
+
+  // Vendor 5 - CORRECTED UUID
+  "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4": {
+    userId: "c9d0e1f2-a3b4-c5d6-e7f8-a9b0c1d2e3f4",
+    role: UserRoleType.RENTAL_VENDOR,
+    username: "electricrent",
+    password: "evpass",
+    name: "Eco Drive Rentals",
+    email: "hello@ecodrive.id",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+    phone: "7777777777",
+    listOfLocations: [
+      "Kabupaten Administrasi Kepulauan Seribu",
+      "Kota Administrasi Jakarta Barat",
+      "Kota Administrasi Jakarta Utara",
+      "Kota Administrasi Jakarta Selatan",
+      "Kota Administrasi Jakarta Timur",
+    ],
+  },
+};
+
+
+export const fiveNewMockAccommodationOwners: Record<string, DTOUserProfile> = {
+  // Owner 1: Bed & Breakfast Manager
+  "a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d7": {
+    userId: "a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d7",
+    role: UserRoleType.ACCOMMODATION_OWNER,
+    username: "bbandbreezy",
+    password: "bbreasy123",
+    name: "Elara House Manager",
+    email: "manager@elarahouse.com",
+    gender: Gender.FEMALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+  },
+
+  // Owner 2: Resort Chain VP
+  "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3": {
+    userId: "b8c9d0e1-f2a3-b4c5-d6e7-f8a9b0c1d2e3",
+    role: UserRoleType.ACCOMMODATION_OWNER,
+    username: "resortboss",
+    password: "resortking123",
+    name: "Marcus Resort VP",
+    email: "marcus@grandresort.com",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+  },
+
+  // Owner 3: Boutique Hotel Owner
+  "c4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f9": {
+    userId: "c4d5e6f7-a8b9-c0d1-e2f3-a4b5c6d7e8f9",
+    role: UserRoleType.ACCOMMODATION_OWNER,
+    username: "boutiquehotel",
+    password: "boutique123",
+    name: "Sophia Boutique Owner",
+    email: "sophia@theboutique.net",
+    gender: Gender.FEMALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+  },
+
+  // Owner 4: Hostel/Guesthouse Operator
+  "d0e1f2a3-b4c5-d6e7-f8a9-b0c1d2e3f4a5": {
+    userId: "d0e1f2a3-b4c5-d6e7-f8a9-b0c1d2e3f4a5",
+    role: UserRoleType.ACCOMMODATION_OWNER,
+    username: "guesthouseop",
+    password: "hostelpass",
+    name: "Raju Guesthouse Manager",
+    email: "raju@chillhostel.co",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+  },
+
+  // Owner 5: Apartment Rental Manager
+  "e6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b1": {
+    userId: "e6f7a8b9-c0d1-e2f3-a4b5-c6d7e8f9a0b1",
+    role: UserRoleType.ACCOMMODATION_OWNER,
+    username: "apartmentmgr",
+    password: "aptsafe123",
+    name: "Alex Apartment Rentals",
+    email: "alex@rentals.com",
+    gender: Gender.MALE,
+    createdAt: MOCK_DATETIME,
+    updatedAt: MOCK_DATETIME,
+    isDeleted: false,
+  },
+};
+
+export const completeMockProfiles = {
+  ...mockProfiles,
+  ...fiveNewMockRentalVendors,
+  ...fiveNewMockAccommodationOwners,
+
+};
+
+export const allProfiles: (DTOUserProfile | DTOCustomer | DTORentalVendor)[] = Object.values(completeMockProfiles);
