@@ -116,4 +116,6 @@ export interface Coupon {
 
 export interface DTOLoginResponse {
   token : string;
+  userId : string;
+  role : UserRoleType;
 }

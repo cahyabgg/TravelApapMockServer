@@ -63,7 +63,9 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
             const jsonRoleName = mapping[key as keyof typeof mapping];
 
             return UserRoleType[jsonRoleName as keyof typeof UserRoleType] === userRole;
-        }) as string
+        }) as string,
+        userId: user.userId,
+        role: userRole
     };
 
     // Create Response Object
