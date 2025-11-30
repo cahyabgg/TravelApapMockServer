@@ -28,20 +28,20 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         );
     }
 
-    const username = req.body.username
+    const email = req.body.email
     const password = req.body.password
 
-    if (!username || !password) {
+    if (!email || !password) {
         return res.status(400).json(
             {
                 status: 400,
-                message: "Body yang anda berikan tidak mememiliki username atau password",
+                message: "Body yang anda berikan tidak mememiliki email atau password",
                 data: null
             }
         );
     }
 
-    const user = Object.values(mockProfiles).find((profile) => profile.username === username) as DTOUserProfile;
+    const user = Object.values(mockProfiles).find((profile) => profile.email === email) as DTOUserProfile;
 
     if (!user || user.password !== password) {
         return res.status(401).json(
