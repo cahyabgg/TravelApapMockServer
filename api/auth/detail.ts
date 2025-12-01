@@ -16,22 +16,6 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(405).json({ status: 405, message: "Method Not Allowed", data: null });
     }
 
-    // 1. Get Authorization Header
-    const authHeader = req.headers.authorization;
-
-    // 2. Check Logic
-    if (!authHeader?.startsWith("Bearer ")) {
-        return res.status(401).json({
-            status: 401,
-            message: "Authenticated user not found. (Missing or Invalid Bearer Token)",
-            timestamp: new Date().toISOString(),
-            data: null
-        });
-    }
-
-    // 3. Extract Token
-    const token = authHeader.split(' ')[1];
-
     const userId = req.query.id as string;
     const username = req.query.username as string;
     const email = req.query.email as string;
