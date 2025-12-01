@@ -32,18 +32,6 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     // 3. Extract Token
     const token = authHeader.split(' ')[1];
 
-    // 4. Map Token to Role
-    try {
-        const decodedToken: DecodedUserJWT = decodeJwt(token) as DecodedUserJWT;
-    } catch (error) {
-        return res.status(403).json({
-            status: 403,
-            message: "Invalid Token",
-            timestamp: new Date().toISOString(),
-            data: null
-        });
-    }
-
     const userId = req.query.id as string;
     const username = req.query.username as string;
     const email = req.query.email as string;
